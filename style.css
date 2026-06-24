@@ -17,9 +17,9 @@
   --color-border:       #e0e0e0;
 
   /* Akcenty kategorii */
-  --color-nauka:        #4caf50;   /* zielony */
-  --color-biznes:       #2196f3;   /* niebieski */
-  --color-edukacja:     #9c27b0;   /* fioletowy */
+  --color-nauka:        #61d865;   /* zielony */
+  --color-biznes:       #f35621;   /* niebieski */
+  --color-edukacja:     #5c7fcc;   /* fioletowy */
 
   /* Sekcja ciemna (Aktualności, Footer) */
   --color-dark-bg:      #1a1a2e;
@@ -42,10 +42,11 @@
   /* Typografia */
   --font-heading: 'Montserrat', sans-serif;
   --font-body:    'Inter', sans-serif;
+   /*Inter*/
 
   /* Skala typografii */
   --text-xs:   0.75rem;   /* 12px */
-  --text-sm:   0.875rem;  /* 14px */
+  /* --text-sm:   0.875rem;  14px */
   --text-base: 1rem;      /* 16px */
   --text-lg:   1.125rem;  /* 18px */
   --text-xl:   1.375rem;  /* 22px */
@@ -55,7 +56,7 @@
   /* Przestrzeń */
   --space-xs:  0.5rem;
   --space-sm:  1rem;
-  --space-md:  1.5rem;
+  /* --space-md:  1.5rem; */
   --space-lg:  2.5rem;
   --space-xl:  4rem;
 
@@ -95,7 +96,7 @@ body {
   font-size: var(--text-base);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.6;
+  /* line-height: 1.6; */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -142,7 +143,7 @@ button {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
-  padding-inline: var(--space-md);
+  padding-inline: 1.5rem;
 }
 
 .container--narrow {
@@ -177,7 +178,7 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: var(--space-md);
+  gap: 1.5rem;
   background: transparent;
   color: var(--color-text);
 }
@@ -212,7 +213,7 @@ button {
   width: 100%;
   aspect-ratio: 3 / 2;
   border-radius: var(--radius-sm);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
 }
 
 .placeholder--partner {
@@ -226,6 +227,7 @@ button {
    5. NAGŁÓWEK I NAWIGACJA
    ================================================================ */
 .site-header {
+  
   position: sticky;
   top: 0;
   z-index: 100;
@@ -237,8 +239,8 @@ button {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-xs) var(--space-md);
+  gap: 0.5rem;
+  padding: var(--space-xs) 1.5rem;
   max-width: var(--container-max);
   margin-inline: auto;
   min-height: 56px;
@@ -253,7 +255,7 @@ button {
   background: transparent;
   border: 1.5px solid var(--color-border);
   font-weight: 700;
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   color: var(--color-text);
 }
 
@@ -267,8 +269,8 @@ button {
 
 .nav-link {
   display: block;
-  padding: var(--space-xs) var(--space-sm);
-  font-size: var(--text-sm);
+  padding: var(--space-xs) 0.5rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-nav-text);
   transition: color var(--transition-base);
@@ -330,10 +332,10 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.45rem var(--space-sm);
+  padding: 0.45rem 0.5rem;
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 100;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #ffffff;
@@ -352,12 +354,12 @@ button {
 .tagline-bar {
   background-color: var(--color-dark-bg);
   text-align: center;
-  padding: 0.35rem var(--space-md);
+  padding: 0.35rem 1.5rem;
 }
 
 .tagline-bar__text {
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -369,11 +371,11 @@ button {
    6. SEKCJA HERO
    ================================================================ */
 .hero {
-  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  padding: var(--space-xl) 1.5rem 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-lg);
+  gap: 2.5rem;
 }
 
 /* Logo w sekcji hero */
@@ -412,32 +414,41 @@ button {
 /* Ikony projektów */
 .projects-icons {
   width: 100%;
-  max-width: 600px;
+  max-width: 1000px;
 }
 
 .projects-icons__list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: var(--space-sm);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md) var(--space-lg);
+  gap: 0.5rem;
+  /* border: 1.5px solid var(--color-border); */
+  /* border-radius: var(--radius-lg); */
+  padding: 1.5rem 2.5rem;
 }
 
 .projects-icons__link {
   display: block;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
   transition: transform var(--transition-base);
+  box-shadow: 5px 2px 7px rgba(113, 113, 113, 0.1);
+  width: 6rem;
+  height: 6rem;
 }
 
 .projects-icons__link:hover {
   transform: translateY(-3px);
 }
 
+
 .projects-icons__link .placeholder--icon {
-  background-color: #f0f0f0;
+  background-color: #fbfbfb;
   color: var(--color-text);
-  border: 1.5px solid var(--color-border);
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* całe logo widoczne */
+  /* border: 1.5px solid var(--color-border);  */
 }
 
 
@@ -449,13 +460,13 @@ button {
 }
 
 .section-heading {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: var(--text-2xl);
   font-weight: 800;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--color-text);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 2.5rem;
 }
 
 .section-heading--light {
@@ -465,20 +476,20 @@ button {
 .about__grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: var(--space-lg) var(--space-xl);
+  gap: 2.5rem var(--space-xl);
   align-items: start;
 }
 
 .about__text p {
   color: var(--color-text-light);
   line-height: 1.75;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
 }
 
 .about__media {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.5rem;
   align-items: flex-end;
   width: 280px;
 }
@@ -507,13 +518,13 @@ button {
 .news-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  gap: 1.5rem;
 }
 
 /* Kafelek pojedynczego posta – POWTARZALNY KOMPONENT */
 .news-item {
   background-color: var(--color-bg);
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
   transition: box-shadow var(--transition-base), transform var(--transition-base);
@@ -526,9 +537,9 @@ button {
 
 .news-item__title {
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   font-weight: 700;
-  padding: var(--space-sm);
+  padding: 0.5rem;
   color: var(--color-text);
   line-height: 1.35;
 }
@@ -546,7 +557,7 @@ button {
 .news-nav {
   display: flex;
   justify-content: flex-end;
-  margin-top: var(--space-md);
+  margin-top: 1.5rem;
 }
 
 .btn-nav {
@@ -570,16 +581,16 @@ button {
 .news-sidebar {
   background-color: rgba(255,255,255,0.05);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: 1.5rem;
 }
 
 .sidebar-heading {
-  font-family: var(--font-heading);
+  /* font-family: var(--font-heading); */
   font-size: var(--text-xl);
   font-weight: 800;
   text-transform: uppercase;
   color: var(--color-dark-heading);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
 }
 
 .sidebar-list {
@@ -590,11 +601,11 @@ button {
 
 .sidebar-list__item {
   border-left: 3px solid var(--color-nauka);
-  padding-left: var(--space-sm);
+  padding-left: 0.5rem;
 }
 
 .sidebar-list__item a {
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   color: var(--color-dark-text);
   line-height: 1.5;
   transition: color var(--transition-base);
@@ -606,7 +617,7 @@ button {
 
 /* Podgląd w sidebarze */
 .sidebar-preview {
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.5rem;
 }
 
 
@@ -620,11 +631,11 @@ button {
 .partners__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: var(--space-md);
+  gap: 1.5rem;
   background-color: var(--color-bg);
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: var(--space-lg);
+  padding: 2.5rem;
 }
 
 .partner-item {
@@ -656,8 +667,8 @@ button {
 
 .contact-form-section__lead {
   color: var(--color-text-light);
-  font-size: var(--text-sm);
-  margin-bottom: var(--space-lg);
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
   text-align: center;
 }
 
@@ -668,7 +679,7 @@ button {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 1.5rem;
 }
 
 .form-group {
@@ -678,7 +689,7 @@ button {
 }
 
 .form-label {
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-text);
 }
@@ -689,7 +700,7 @@ button {
 
 .form-input {
   width: 100%;
-  padding: 0.7rem var(--space-sm);
+  padding: 0.7rem 0.5rem;
   border: 1.5px solid var(--color-border);
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
@@ -725,7 +736,7 @@ button {
   padding: 0.8rem var(--space-xl);
   border-radius: var(--radius-sm);
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -756,7 +767,7 @@ button {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: var(--space-lg) var(--space-xl);
+  gap: 2.5rem var(--space-xl);
 }
 
 .footer-logo__circle {
@@ -770,7 +781,7 @@ button {
 
 .footer-heading {
   font-family: var(--font-heading);
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -783,7 +794,7 @@ button {
 }
 
 .footer-link {
-  font-size: var(--text-sm);
+  font-size: 0.875rem;
   color: var(--color-dark-text);
   transition: color var(--transition-base);
 }
@@ -794,7 +805,7 @@ button {
 
 .social-links {
   display: flex;
-  gap: var(--space-md);
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -859,7 +870,7 @@ button {
     align-items: flex-start;
     width: 100%;
     background-color: var(--color-nav-bg);
-    padding: var(--space-sm) var(--space-md);
+    padding: 0.5rem 1.5rem;
     border-top: 1px solid var(--color-border);
     position: absolute;
     top: 100%;
@@ -885,7 +896,7 @@ button {
 
   /* Hero */
   .hero {
-    padding: var(--space-lg) var(--space-md);
+    padding: 2.5rem 1.5rem;
   }
 
   .hero__logo-title {
@@ -893,7 +904,7 @@ button {
   }
 
   .projects-icons__list {
-    padding: var(--space-sm);
+    padding: 0.5rem;
     gap: var(--space-xs);
     border-radius: var(--radius-md);
   }
@@ -921,7 +932,7 @@ button {
   /* Partnerzy – 2 kolumny */
   .partners__grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: var(--space-md);
+    padding: 1.5rem;
   }
 
   /* Stopka */
