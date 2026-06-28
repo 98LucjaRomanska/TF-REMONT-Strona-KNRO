@@ -17,9 +17,9 @@
   --color-border:       #e0e0e0;
 
   /* Akcenty kategorii */
-  --color-nauka:        #61d865;   /* zielony */
-  --color-biznes:       #f35621;   /* niebieski */
-  --color-edukacja:     #5c7fcc;   /* fioletowy */
+  --color-nauka:        #2ec24f;  /* zielony */
+  --color-biznes:       #ff5050;   /* niebieski */
+  --color-edukacja:     #4d74ff;   /* fioletowy */
 
   /* Sekcja ciemna (Aktualności, Footer) */
   --color-dark-bg:      #1a1a2e;
@@ -58,7 +58,7 @@
   --space-sm:  1rem;
   /* --space-md:  1.5rem; */
   --space-lg:  2.5rem;
-  --space-xl:  4rem;
+  --space-xl:  3rem;
 
   /* Layout */
   --container-max: 1100px;
@@ -324,6 +324,7 @@ button {
 /* Pasek NAUKA / BIZNES / EDUKACJA */
 .category-bar {
   display: flex;
+  width: 100%;
   align-items: stretch;
 }
 
@@ -331,7 +332,10 @@ button {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center; 
+  align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
   padding: 0.45rem 0.5rem;
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -339,11 +343,12 @@ button {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #ffffff;
-  transition: filter var(--transition-base);
+  /* transition: filter var(--transition-base); */
 }
 
 .category-bar__item:hover {
   filter: brightness(1.12);
+  transform: scale(1.05);
 }
 
 .category-bar__item--nauka   { background-color: var(--color-nauka); }
@@ -408,23 +413,24 @@ button {
   color: var(--color-text-light);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-top: 0.2rem;
 }
 
 /* Ikony projektów */
 .projects-icons {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
 }
 
 .projects-icons__list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  column-gap: 0.7rem;
+  row-gap: 1rem;
   /* border: 1.5px solid var(--color-border); */
   /* border-radius: var(--radius-lg); */
   padding: 1.5rem 2.5rem;
+  margin: 1rem 0;
 }
 
 .projects-icons__link {
@@ -433,8 +439,12 @@ button {
   border-radius: var(--radius-lg);
   transition: transform var(--transition-base);
   box-shadow: 5px 2px 7px rgba(113, 113, 113, 0.1);
-  width: 6rem;
-  height: 6rem;
+  width: 10rem;/*10rem;*/
+  height: 10rem;
+  @media(max-width: 1300px) {
+    width: 8rem;/*10rem;*/
+    height: 8rem;
+  }
 }
 
 .projects-icons__link:hover {
@@ -503,22 +513,32 @@ button {
    8. SEKCJA AKTUALNOŚCI + SIDEBAR
    ================================================================ */
 .news-section {
-  background-color: var(--color-dark-bg);
+  display: flex;
+  justify-content: center;
+  /* background-color: var(--color-dark-bg); */
+  background-color: #353535;
   padding: var(--space-xl) 0;
 }
-
+.holder {
+  width: 90%;
+}
 .news-section__layout {
   display: grid;
   grid-template-columns: 1fr 300px;
-  gap: var(--space-xl);
+  justify-content: space-between;
+  gap: 2rem;
   align-items: start;
+  
 }
-
+.news-main {
+  max-width: 1200px;
+  width: 100%;
+}
 /* Grid kafelków aktualności */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1rem;
 }
 
 /* Kafelek pojedynczego posta – POWTARZALNY KOMPONENT */
@@ -579,9 +599,10 @@ button {
 
 /* Sidebar NOWOŚCI! */
 .news-sidebar {
-  background-color: rgba(255,255,255,0.05);
+  background-color:  rgba(255,255,255,0.05);
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .sidebar-heading {
@@ -605,14 +626,17 @@ button {
 }
 
 .sidebar-list__item a {
+  display: inline-block;
   font-size: 0.875rem;
   color: var(--color-dark-text);
   line-height: 1.5;
-  transition: color var(--transition-base);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .sidebar-list__item a:hover {
   color: var(--color-nauka);
+  transform: scale(1.05);
+  
 }
 
 /* Podgląd w sidebarze */
@@ -627,10 +651,14 @@ button {
 .partners {
   padding: var(--space-xl) 0;
 }
-
+.partner-container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 1300px;
+}
 .partners__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
   background-color: var(--color-bg);
   border: 1.5px solid var(--color-border);
@@ -651,9 +679,16 @@ button {
 }
 
 .partner-item .placeholder--partner {
+  min-height: 120px;
   border-radius: var(--radius-sm);
   font-size: var(--text-xs);
   padding: var(--space-xs);
+}
+
+.partner-item .placeholder--partner img {
+  max-height: 120px;        /* Ograniczenie wysokości logo, żeby nie rozciągało się w nieskończoność */
+  width: auto;             /* Zachowanie proporcji logo */
+  object-fit: contain;
 }
 
 
