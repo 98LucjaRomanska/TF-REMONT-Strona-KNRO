@@ -172,10 +172,14 @@ button {
 .placeholder--logo {
   width: 160px;
   height: 44px;
+  padding: 15%;
 }
 
 .placeholder--hero-logo {
   display: flex;
+  width: 450px;
+  height: 150px;
+  padding: 15%;
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
@@ -418,7 +422,7 @@ button {
 /* Ikony projektów */
 .projects-icons {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1700px;
 }
 
 .projects-icons__list {
@@ -439,8 +443,8 @@ button {
   border-radius: var(--radius-lg);
   transition: transform var(--transition-base);
   box-shadow: 5px 2px 7px rgba(113, 113, 113, 0.1);
-  width: 10rem;/*10rem;*/
-  height: 10rem;
+  width: 12rem;/*10rem;*/
+  height: 12rem;
   @media(max-width: 1300px) {
     width: 8rem;/*10rem;*/
     height: 8rem;
