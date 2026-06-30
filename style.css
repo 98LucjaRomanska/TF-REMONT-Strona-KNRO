@@ -364,11 +364,12 @@ button {
   background-color: var(--color-dark-bg);
   text-align: center;
   padding: 0.35rem 1.5rem;
+  
 }
 
 .tagline-bar__text {
   font-family: var(--font-heading);
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
