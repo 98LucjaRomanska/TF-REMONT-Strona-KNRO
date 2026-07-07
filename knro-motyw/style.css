@@ -995,6 +995,30 @@ button {
 }
 
 /* ================================================================
+   14. SZABLON OPIEKUNOWIE
+   ================================================================ */
+.supervisors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    row-gap: 6rem;
+    justify-items: center;
+    max-width: 900px; /* Zwężamy kontener, żeby nie uciekli za bardzo na boki */
+    margin: 0 auto;
+}
+
+/* Modifier do powiększenia kart */
+.board-member--large {
+    max-width: 380px; 
+}
+
+.board-member--large .board-member__info {
+    padding: 1.5rem 1rem;
+    bottom: -3.5rem;
+    width: 105%;
+}
+
+/* ================================================================
    12. RESPONSYWNOŚĆ – Media Queries
    Mobile First: powyżej to desktop, poniżej adaptujemy
    ================================================================ */
@@ -1166,5 +1190,11 @@ button {
   .board-grid {
     grid-template-columns: 1fr;
     row-gap: 4rem;
+  }
+
+  /* Opiekunowie na mobile */
+  .supervisors-grid {
+    grid-template-columns: 1fr;
+    gap: 6rem;
   }
 }
