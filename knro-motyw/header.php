@@ -37,7 +37,7 @@
             <li><a href="<?php echo site_url('/tozsamosc'); ?>" class="dropdown-link">Tożsamość</a></li>
             <li><a href="<?php echo site_url('/zarzad'); ?>" class="dropdown-link">Zarząd</a></li>
             <li><a href="<?php echo site_url('/koordynatorzy'); ?>" class="dropdown-link">Koordynatorzy</a></li>
-            <li><a href="<?php echo site_url('/opiekunowie-naukowi'); ?>" class="dropdown-link">Opiekunowie Naukowi</a></li>
+            <li><a href="<?php echo site_url('/opiekunowie'); ?>" class="dropdown-link">Opiekunowie Naukowi</a></li>
             <li><a href="<?php echo site_url('/historia'); ?>" class="dropdown-link">Historia</a></li>
           </ul>
         </li>

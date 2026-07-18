@@ -405,7 +405,6 @@ button {
   background-color: var(--color-dark-bg);
   text-align: center;
   padding: 0.35rem 1.5rem;
-  
 }
 
 .tagline-bar__text {
@@ -1017,6 +1016,104 @@ button {
     bottom: -3.5rem;
     width: 105%;
 }
+
+/* ================================================================
+   15. SZABLON TOZSAMOSC
+   ================================================================ */
+#main-content-t {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items:center;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  min-width: 300px;
+  margin: 0 auto;
+} 
+#main-content-t p {
+  font-size: 3em;
+}
+.item {
+  display: grid;
+  /* Definiujemy dwie kolumny w proporcjach 1.5 do 3.5 */
+  grid-template-columns: 1.5fr 3.5fr; 
+  gap: 20px; /* Odstęp między obrazkiem a tekstem - możesz dostosować */
+  max-width: 1000px;
+  margin: 0 1rem; /* Centrowanie całego elementu na stronie */
+  align-items:normal;
+  /* background-color: #2ec24f; */
+}
+.item-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.text-holder {
+  font-size: 10px;
+  font-family: var(--font-body);
+  line-height: 1.5;
+  width: 80%;
+  /* background-color: #4d74ff; */
+  margin: 1rem 1.5rem;
+}
+
+.item:first-child {
+  grid-area: first;
+}
+
+.item:nth-child(2) {
+  grid-area: second;
+}
+
+.grid-arrangement {
+  margin: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+  max-width: 1000px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "first"
+  "second";
+}
+
+.tag-filar {
+  background-color: var(--color-dark-bg);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 10px 0 ;
+  width: 100%;
+  grid-column: 1/-1; /*tag przez to zajmuje cały pierwszy wiersz*/;
+  cursor:pointer;
+}
+.item:nth-child(odd) .tag-filar:hover {
+    background-color: var(--color-biznes);
+}
+
+.item:nth-child(even) .tag-filar:hover {
+    background-color: var(--color-nauka);
+}
+
+.tag-filar {
+    transition: background-color 0.2s ease;
+}
+
+@media (max-width:780px) {
+    .text-holder {font-size: 7px;}
+    .item {
+      margin: 0 1rem; 
+      grid-template-columns: 1fr 4fr;
+    }
+  }
+
 
 /* ================================================================
    12. RESPONSYWNOŚĆ – Media Queries
