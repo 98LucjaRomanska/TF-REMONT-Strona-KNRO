@@ -94,86 +94,85 @@
     </section>
 
     <!-- ============================================================
-         SEKCJA AKTUALNOŚCI + SIDEBAR NOWOŚCI
-         W WordPress: tu wchodzi The Loop (WP_Query)
+         SEKCJA AKTUALNOŚCI Z NOWĄ KARUZELĄ
          ============================================================ -->
-    <section class="news-section" id="aktualnosci" aria-labelledby="news-heading">
-      <div class="holder">
-        <div class="news-section__layout">
+      <section class="news-section" id="aktualnosci" aria-labelledby="news-heading">
+        <div class="holder">
+          <div class="news-section__layout">
 
-          <!-- Główna kolumna z kafelkami aktualności -->
-          <div class="news-main">
-            <h2 class="section-heading section-heading--light" id="news-heading">Aktualności</h2>
+            <!-- Główna kolumna z kafelkami aktualności -->
+            <div class="news-main">
+              <h2 class="section-heading section-heading--light" id="news-heading">Aktualności</h2>
 
-            <!-- Karuzela / grid kafelków
-                W WordPress: while ( $query->have_posts() ) : $query->the_post(); 
-                Każdy <article class="news-item"> to jeden post z Pętli. -->
-            <div class="news-grid" role="list">
-                <?php 
-                // 1. Definiujemy zapytanie: pobierz 3 najnowsze wpisy z bloga
-                $args = array(
-                    'post_type' => 'post',
-                    'posts_per_page' => 3
-                );
-                $news_query = new WP_Query($args);
+              <!-- Nowy kontener karuzeli ze strzałkami -->
+              <div class="carousel-wrapper">
+                  
+                  <!-- Lewa strzałka -->
+                  <button class="carousel-arrow carousel-arrow--prev" aria-label="Poprzednie" onclick="przewinKaruzele('karuzela-index', -1)">&#8249;</button>
+                  
+                  <!-- Prawa strzałka -->
+                  <button class="carousel-arrow carousel-arrow--next" aria-label="Następne" onclick="przewinKaruzele('karuzela-index', 1)">&#8250;</button>
 
-                // 2. Sprawdzamy, czy są jakiekolwiek wpisy
-                if ( $news_query->have_posts() ) : 
-                    // 3. Pętla: generuj poniższy kod dla każdego wpisu
-                    while ( $news_query->have_posts() ) : $news_query->the_post(); 
-                ?>
+                  <!-- Kontener kafelków -->
+                  <div class="news-grid news-carousel" id="karuzela-index" role="list">
+                      <?php 
+                      $args = array(
+                          'post_type' => 'post',
+                          'posts_per_page' => 6 // Zwiększamy do 6, by było co przewijać
+                      );
+                      $news_query = new WP_Query($args);
 
-                    <article class="news-item" role="listitem">
-                        <div class="news-item__thumb">
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <?php the_post_thumbnail('medium', array('style' => 'object-fit: cover; width: 100%; height: 100%; border-radius: 6px 6px 0 0;')); ?>
-                            <?php else : ?>
-                                <div class="placeholder placeholder--news-thumb" aria-hidden="true">Brak miniaturki</div>
-                            <?php endif; ?>
-                        </div>
-                        
-                        <h3 class="news-item__title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-                    </article>
+                      if ( $news_query->have_posts() ) : 
+                          while ( $news_query->have_posts() ) : $news_query->the_post(); 
+                      ?>
 
-                <?php 
-                    endwhile; 
-                    // 4. Sprzątamy po zapytaniu
-                    wp_reset_postdata(); 
-                else : 
-                ?>
-                    <p style="grid-column: 1 / -1; padding: 20px;">Brak aktualności do wyświetlenia. Dodaj pierwszy wpis w panelu WP!</p>
-                <?php endif; ?>
+                          <!-- POJEDYNCZY KAFELEK -->
+                          <article class="news-item" role="listitem">
+                              <div class="news-item__thumb">
+                                  <?php if ( has_post_thumbnail() ) : ?>
+                                      <?php the_post_thumbnail('medium', array('style' => 'object-fit: cover; width: 100%; height: 100%; border-radius: 6px 6px 0 0;')); ?>
+                                  <?php else : ?>
+                                      <div class="placeholder placeholder--news-thumb" aria-hidden="true">Brak miniaturki</div>
+                                  <?php endif; ?>
+                              </div>
+                              
+                              <h3 class="news-item__title">
+                                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                              </h3>
+                          </article>
 
-            </div><!-- /.news-grid -->
+                      <?php 
+                          endwhile; 
+                          wp_reset_postdata(); 
+                      else : 
+                      ?>
+                          <p style="grid-column: 1 / -1; padding: 20px;">Brak aktualności do wyświetlenia. Dodaj pierwszy wpis w panelu WP!</p>
+                      <?php endif; ?>
 
-            <!-- Przycisk nawigacji karuzeli / paginacja -->
-            <div class="news-nav" aria-label="Paginacja aktualności">
-              <button class="btn-nav btn-nav--next" aria-label="Następne aktualności">&#8250;</button>
-            </div>
-          </div><!-- /.news-main -->
+                  </div><!-- /.news-carousel -->
+              </div><!-- /.carousel-wrapper -->
+            </div><!-- /.news-main -->
 
-          <!-- Sidebar: NOWOŚCI! -->
-          <!-- W WordPress: get_sidebar() lub dynamic_sidebar('news-widget') -->
-          <aside class="news-sidebar" aria-labelledby="sidebar-heading">
-            <h3 class="sidebar-heading" id="sidebar-heading">Nowości!</h3>
-            <!-- W WordPress: WP_Widget lub shortcode listy postów -->
-            <div class="sidebar-preview">
-              <div class="placeholder placeholder--sidebar-img" aria-hidden="true">Podgląd artykułu</div>
-            </div>
-            <ul class="sidebar-list" role="list">
-              <li class="sidebar-list__item"><a href="#">Kapsułki na porost włosów</a></li>
-              <li class="sidebar-list__item"><a href="#">Nowe rzeczy</a></li>
-              <li class="sidebar-list__item"><a href="#">I nie tylko</a></li>
-              <li class="sidebar-list__item"><a href="#">Zapraszamy na nasz spot reklamowy</a></li>
-              <li class="sidebar-list__item"><a href="#">Mateusz NIE Mati!</a></li>
-            </ul>
-          </aside>
+            <!-- Sidebar: NOWOŚCI! -->
+            <aside class="news-sidebar" aria-labelledby="sidebar-heading">
+              <h3 class="sidebar-heading" id="sidebar-heading">Nowości!</h3>
+              <div class="sidebar-preview">
+                <div class="placeholder placeholder--sidebar-img" aria-hidden="true">Podgląd artykułu</div>
+              </div>
+              <ul class="sidebar-list" role="list">
+                <li class="sidebar-list__item"><a href="#">Kapsułki na porost włosów</a></li>
+                <li class="sidebar-list__item"><a href="#">Nowe rzeczy</a></li>
+                <li class="sidebar-list__item"><a href="#">I nie tylko</a></li>
+                <li class="sidebar-list__item"><a href="#">Zapraszamy na nasz spot reklamowy</a></li>
+                <li class="sidebar-list__item"><a href="#">Mateusz NIE Mati!</a></li>
+              </ul>
+            </aside>
 
-        </div><!-- /.news-section__layout -->
-      </div> 
-    </section>
+          </div><!-- /.news-section__layout -->
+        </div> 
+      </section>
+
+      
 
     <!-- ============================================================
          SEKCJA PARTNERZY

@@ -42,6 +42,20 @@
       });
     }
   </script>
+  <script>
+    // Funkcja przewijająca karuzelę
+    function przewinKaruzele(idKontenera, kierunek) {
+        const kontener = document.getElementById(idKontenera);
+        if (kontener) {
+            // Obliczamy szerokość, o jaką chcemy przewinąć (np. cały widoczny obszar)
+            const przesuniecie = kontener.clientWidth;
+            kontener.scrollBy({
+                left: przesuniecie * kierunek,
+                behavior: 'smooth' // płynne przewijanie
+            });
+        }
+    }
+  </script>
  <?php wp_footer(); ?>
 </body>
 </html>

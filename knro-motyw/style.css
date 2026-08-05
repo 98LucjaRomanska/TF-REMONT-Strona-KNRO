@@ -1116,6 +1116,164 @@ button {
 
 
 /* ================================================================
+   16. SZABLON PROJEKTY
+   ================================================================ */
+/* Nagłówek (Logo + Tekst) */
+.project-header {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.project-logo {
+    flex-shrink: 0;
+}
+
+/* Niebieski pasek kadencji */
+.term-bar--blue {
+    background-color: #4A70FF;
+    margin-bottom: 4rem;
+}
+
+/* Dwie kolumny tekstowe */
+.project-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+/* Ciemne zaokrąglone nagłówki (pigułki) */
+.dark-pill {
+    background-color: var(--color-dark-bg);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+/* Pozioma karta koordynatora */
+.project-coordinator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    position: relative;
+    max-width: 900px;
+}
+
+.project-coordinator__photo {
+    z-index: 2; /* Zdjęcie jest nad kartą */
+    position: relative;
+}
+
+.project-coordinator__card {
+    background-color: #ffffff;
+    padding: 3rem 3rem 3rem 5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-left: -4rem; /* Karta wsuwa się pod zdjęcie */
+    z-index: 1;
+    flex-grow: 1;
+}
+
+/* ================================================================
+   17. KARUZELA GALERII W PROJEKTACH (I AKTUALNOŚCIACH)
+   ================================================================ */
+
+/* Kontener główny, dzięki niemu strzałki trzymają się krawędzi */
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Układ poziomy z ukrytym systemowym suwakiem */
+.news-carousel {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto; /* Włącza przewijanie w poziomie */
+    scroll-snap-type: x mandatory; /* Eleganckie "przyklejanie" kafelków */
+    padding-bottom: 1.5rem;
+    
+    /* Ukrycie systemowego paska przewijania (zostawiamy same strzałki) */
+    scrollbar-width: none; /* Dla przeglądarki Firefox */
+    -ms-overflow-style: none; /* Dla IE/Edge */
+}
+
+/* Ukrycie paska w Chrome/Safari/Opera */
+.news-carousel::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Pojedynczy kafelek w karuzeli (na komputerze 3 obok siebie) */
+.news-carousel .news-item {
+    flex: 0 0 calc(33.333% - 1.35rem); 
+    scroll-snap-align: start; 
+}
+
+/* Wygląd okrągłych, eleganckich strzałek */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background-color: #222; /* Ciemne tło przycisku */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Strzałki muszą być zawsze na wierzchu */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efekt po najechaniu myszką na strzałkę */
+.carousel-arrow:hover {
+    background-color: #4A70FF; /* Kolor niebieski z Waszego motywu */
+    transform: translateY(-50%) scale(1.1); /* Lekkie powiększenie */
+}
+
+/* Wypuszczenie strzałek lekko na boki, poza kafelki */
+.carousel-arrow--prev { left: -20px; }
+.carousel-arrow--next { right: -20px; }
+
+
+/* --- RESPONSYWNOŚĆ KARUZELI --- */
+
+/* Na tablety (pokazujemy 2 kafelki) */
+@media (max-width: 900px) {
+    .news-carousel .news-item {
+        flex: 0 0 calc(50% - 1rem); 
+    }
+}
+
+/* Na telefony (pokazujemy 1 kafelek, z widocznym kawałkiem następnego) */
+@media (max-width: 640px) {
+    .news-carousel .news-item {
+        flex: 0 0 85%; 
+    }
+    
+    /* Chowamy strzałki na telefony trochę do środka, żeby nie uciekły poza ekran */
+    .carousel-arrow--prev { left: 0px; }
+    .carousel-arrow--next { right: 0px; }
+}
+
+
+
+
+
+
+/* ================================================================
    12. RESPONSYWNOŚĆ – Media Queries
    Mobile First: powyżej to desktop, poniżej adaptujemy
    ================================================================ */
@@ -1158,6 +1316,26 @@ button {
   /* Tablet: 2 kolumny na zarząd zamiast 4 */
   .board-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Projekty na mniejszych ekranach */
+  .project-header, .project-coordinator {
+    flex-direction: column;
+    text-align: center;
+  }
+  .project-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .project-coordinator__card {
+    margin-left: 0;
+    margin-top: -3rem;
+    padding: 4rem 2rem 2rem 2rem;
+  }
+  .project-coordinator__card h4, 
+  .project-coordinator__card a, 
+  .project-coordinator__card p {
+    text-align: center !important;
   }
 }
 
