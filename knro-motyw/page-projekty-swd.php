@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Projekt - Trenerzy
+Template Name: Projekt - sztuka-w-dzialaniach
 */
 get_header(); 
 ?>
@@ -16,10 +16,10 @@ get_header();
     <div class="project-header">
         <div class="project-logo">
             <!-- TUTAJ JEST TWOJE NOWE LOGO -->
-            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-trenerzy.png" alt="Logo projektu" style="width: 150px; height: 150px; object-fit: contain; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-swd.png" alt="Logo projektu" style="width: 150px; height: 150px; object-fit: contain; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
         </div>
         <div class="project-intro">
-            <h2 style="color: #4d74ff; font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; margin-bottom: 1rem;">Trenerzy</h2>
+            <h2 style="color: #4d74ff; font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; margin-bottom: 1rem;">Sztuka (w) działania(ch)</h2>
             <p style="color: var(--color-text-light); line-height: 1.6;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         </div>
     </div>
@@ -79,17 +79,17 @@ get_header();
         <div class="carousel-wrapper">
             
             <!-- Lewa strzałka podpięta pod identyfikator karuzeli -->
-            <button class="carousel-arrow carousel-arrow--prev" aria-label="Poprzednie" onclick="przewinKaruzele('galeria-trenerzy', -1)">&#8249;</button>
+            <button class="carousel-arrow carousel-arrow--prev" aria-label="Poprzednie" onclick="przewinKaruzele('galeria-swd', -1)">&#8249;</button>
             
             <!-- Prawa strzałka podpięta pod identyfikator karuzeli -->
-            <button class="carousel-arrow carousel-arrow--next" aria-label="Następne" onclick="przewinKaruzele('galeria-trenerzy', 1)">&#8250;</button>
+            <button class="carousel-arrow carousel-arrow--next" aria-label="Następne" onclick="przewinKaruzele('galeria-swd', 1)">&#8250;</button>
 
-            <!-- Kontener kafelków z identyfikatorem id="galeria-trenerzy" -->
-            <div class="news-carousel" id="galeria-trenerzy" role="list">
+            <!-- Kontener kafelków z identyfikatorem id="galeria-swd" -->
+            <div class="news-carousel" id="galeria-swd" role="list">
                 <?php 
                 $args = array(
                     'post_type'      => 'post',
-                    'category_name'  => 'trenerzy', // <--- Pamiętaj o właściwym slugu dla innych projektów
+                    'category_name'  => 'swd', // <--- Pamiętaj o właściwym slugu dla innych projektów
                     'posts_per_page' => 12 
                 );
                 $gallery_query = new WP_Query($args);

@@ -28,7 +28,7 @@
       </div>
       <ul class="nav-links" role="list">
         <li><a href="<?php echo home_url(); ?>" class="nav-link nav-link--active">Strona Główna</a></li>
-        <li><a href="#aktualnosci" class="nav-link">Aktualności</a></li>
+        <li><a href="<?php echo site_url('/aktualnosci'); ?>" class="nav-link">Aktualności</a></li>
         <li class="nav-link--has-dropdown">
           <a href="#" class="nav-link">O nas ▾</a>
           
@@ -47,12 +47,12 @@
           <ul class="dropdown-menu">
             <li><a href="<?php echo site_url('/trenerzy'); ?>" class="dropdown-link">Trenerzy</a></li>
             <li><a href="<?php echo site_url('/badania'); ?>" class="dropdown-link">Badania</a></li>
-            <li><a href="<?php echo site_url('/swd'); ?>" class="dropdown-link">S(w)D</a></li>
+            <li><a href="<?php echo site_url('/sztuka-w-dzialaniach'); ?>" class="dropdown-link">S(w)D</a></li>
             <li><a href="<?php echo site_url('/bw'); ?>" class="dropdown-link">BW</a></li>
             <li><a href="<?php echo site_url('/gps'); ?>" class="dropdown-link">GPS</a></li>
             <li><a href="<?php echo site_url('/cc'); ?>" class="dropdown-link">CC</a></li>
             <li><a href="<?php echo site_url('/hs'); ?>" class="dropdown-link">HS</a></li>
-            <li><a href="<?php echo site_url('/od'); ?>" class="dropdown-link">OD</a></li>
+            <!--<li><a href="<?php echo site_url('/od'); ?>" class="dropdown-link">OD</a></li>-->
           </ul>
         </li>
 

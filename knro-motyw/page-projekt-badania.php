@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Projekt - Trenerzy
+Template Name: Projekt - Badania
 */
 get_header(); 
 ?>
@@ -16,16 +16,16 @@ get_header();
     <div class="project-header">
         <div class="project-logo">
             <!-- TUTAJ JEST TWOJE NOWE LOGO -->
-            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-trenerzy.png" alt="Logo projektu" style="width: 150px; height: 150px; object-fit: contain; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-badania.png" alt="Logo projektu" style="width: 150px; height: 150px; object-fit: contain; background: #fff; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
         </div>
         <div class="project-intro">
-            <h2 style="color: #4d74ff; font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; margin-bottom: 1rem;">Trenerzy</h2>
+            <h2 style="color: #2ec24f; font-size: 2.5rem; font-family: var(--font-heading); font-weight: 700; margin-bottom: 1rem;">Badania</h2>
             <p style="color: var(--color-text-light); line-height: 1.6;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         </div>
     </div>
 
     <!-- 2. PASEK KADENCJI (Niebieski) -->
-    <div class="term-bar term-bar--blue">
+    <div class="term-bar term-bar--nauka">
         <h2 class="term-bar__title">2027/28</h2>
         <a href="#" class="term-bar__nav" aria-label="Poprzednia kadencja">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -60,7 +60,7 @@ get_header();
             <div class="placeholder placeholder--person" style="width: 250px; height: 320px; background: #e6e6e6;">Zdjęcie Koordynatora</div>
         </div>
         <div class="project-coordinator__card">
-            <h3 style="color: #4d74ff; font-family: var(--font-heading); font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.2rem;">KOORDYNATOR/KA PROJEKTU</h3>
+            <h3 style="color: #2ec24f; font-family: var(--font-heading); font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 0.2rem;">KOORDYNATOR/KA PROJEKTU</h3>
             <h4 style="font-size: 1.2rem; color: var(--color-text); margin-bottom: 0.2rem; text-align: right;">Imię Nazwisko</h4>
             <a href="mailto:adres@knro.pl" class="board-member__email" style="display: block; text-align: right; margin-bottom: 1.5rem;">adres@knro.pl</a>
             
@@ -79,17 +79,17 @@ get_header();
         <div class="carousel-wrapper">
             
             <!-- Lewa strzałka podpięta pod identyfikator karuzeli -->
-            <button class="carousel-arrow carousel-arrow--prev" aria-label="Poprzednie" onclick="przewinKaruzele('galeria-trenerzy', -1)">&#8249;</button>
+            <button class="carousel-arrow carousel-arrow--prev" aria-label="Poprzednie" onclick="przewinKaruzele('galeria-badania', -1)">&#8249;</button>
             
             <!-- Prawa strzałka podpięta pod identyfikator karuzeli -->
-            <button class="carousel-arrow carousel-arrow--next" aria-label="Następne" onclick="przewinKaruzele('galeria-trenerzy', 1)">&#8250;</button>
+            <button class="carousel-arrow carousel-arrow--next" aria-label="Następne" onclick="przewinKaruzele('galeria-badania', 1)">&#8250;</button>
 
-            <!-- Kontener kafelków z identyfikatorem id="galeria-trenerzy" -->
-            <div class="news-carousel" id="galeria-trenerzy" role="list">
+            <!-- Kontener kafelków z identyfikatorem id="galeria-badania" -->
+            <div class="news-carousel" id="galeria-badania" role="list">
                 <?php 
                 $args = array(
                     'post_type'      => 'post',
-                    'category_name'  => 'trenerzy', // <--- Pamiętaj o właściwym slugu dla innych projektów
+                    'category_name'  => 'badania', // <--- Pamiętaj o właściwym slugu dla innych projektów
                     'posts_per_page' => 12 
                 );
                 $gallery_query = new WP_Query($args);

@@ -3,8 +3,13 @@
        ============================================================ -->
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-container">
-
-     
+      <!-- Logo w stopce -->
+      <div class="footer-logo">
+        <a href="<?php echo site_url(); ?>" aria-label="Strona główna">
+          <!-- Pamiętaj, aby podmienić 'logo-stopka.png' na właściwą nazwę Twojego białego pliku logo -->
+          <img src="<?php echo get_template_directory_uri(); ?>/images/knro_znak.png" alt="Logo KNRO" class="footer-logo__img">
+        </a>
+      </div>
 
       <!-- Dane kontaktowe -->
       <div class="footer-contact">
