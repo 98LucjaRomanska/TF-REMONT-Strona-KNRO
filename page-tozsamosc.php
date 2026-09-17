@@ -7,10 +7,10 @@ get_header();
 <div id="main-content-t">
     
     <div class="navigation-values">
-    <span> Misja </span>
-    <span> Wizja </span> 
-    <span> Filary </span>
-    <span> Wartości </span>         
+    <a href="<?php echo get_permalink(); ?>#misja"> Misja </a>
+    <a href="<?php echo get_permalink(); ?>#wizja"> Wizja </a> 
+    <a href="<?php echo get_permalink(); ?>#filary"> Filary </a>
+    <a href="<?php echo get_permalink(); ?>#wartosci"> Wartości </a>         
     </div>
     <div class="b-block" id="misja"> 
         <h1> MISJA </h1>
@@ -78,7 +78,7 @@ get_header();
             
         </div>  
     </div>
-        <div class="b-block"> 
+        <div class="b-block" id="wartosci"> 
             <h1> WARTOŚCI </h1>
             <br></br>
             <div class="item prop-right">

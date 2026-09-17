@@ -1098,7 +1098,7 @@ button {
   text-align: center;
 
 }
-.navigation-values span { 
+.navigation-values a { 
   /* border: 1px solid black; */
   padding: 10px 1vw;
   margin: 1rem;
@@ -1109,14 +1109,15 @@ button {
   box-shadow: var(--shadow-card-hover);
 }
 /* zmiana kolorów elementów span */
-.navigation-values span:nth-child(1) { color: var(--color-dark-bg) } 
-.navigation-values span:nth-child(2) { color: var(--color-biznes) } 
-.navigation-values span:nth-child(3) { color: var(--color-nauka) } 
-.navigation-values span:nth-child(4) { color: var(--color-edukacja) } 
+.navigation-values a:nth-child(1) { color: var(--color-dark-bg) } 
+.navigation-values a:nth-child(2) { color: var(--color-biznes) } 
+.navigation-values a:nth-child(3) { color: var(--color-nauka) } 
+.navigation-values a:nth-child(4) { color: var(--color-edukacja) } 
 
 
-.navigation-values span:hover {
+.navigation-values a:hover {
   cursor: pointer; 
+  background-color: #d7d7d7;
 }
 .b-block {
   width: 95%;
@@ -1124,6 +1125,7 @@ button {
   /* margin-top: 1rem; */
   padding:0 10px;
   
+  scroll-margin-top: 100px;
  }
 
 .b-block h1 {
@@ -1131,6 +1133,15 @@ button {
   font-weight: 400;
   margin-bottom: 1rem;
   letter-spacing: 3px;
+
+  transition: letter-spacing 0.3s ease, transform 0.2s ease;
+  display:inline-block;
+  
+}
+.b-block h1:hover {
+  cursor: pointer;
+  letter-spacing: 2px;
+  transform: translateY(4px);
 }
 #misja  {
   text-align: left;
