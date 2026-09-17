@@ -45,13 +45,13 @@
         <li class="nav-link--has-dropdown">
           <a href="#" class="nav-link">Projekty ▾</a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo site_url('/trenerzy'); ?>" class="dropdown-link">Trenerzy</a></li>
-            <li><a href="<?php echo site_url('/badania'); ?>" class="dropdown-link">Badania</a></li>
-            <li><a href="<?php echo site_url('/sztuka-w-dzialaniach'); ?>" class="dropdown-link">S(w)D</a></li>
-            <li><a href="<?php echo site_url('/bw'); ?>" class="dropdown-link">BW</a></li>
-            <li><a href="<?php echo site_url('/gps'); ?>" class="dropdown-link">GPS</a></li>
-            <li><a href="<?php echo site_url('/cc'); ?>" class="dropdown-link">CC</a></li>
-            <li><a href="<?php echo site_url('/hs'); ?>" class="dropdown-link">HS</a></li>
+            <li><a href="<?php echo site_url('/projekt-trenerzy'); ?>" class="dropdown-link">Trenerzy</a></li>
+            <li><a href="<?php echo site_url('/projekt-badania'); ?>" class="dropdown-link">Badania</a></li>
+            <li><a href="<?php echo site_url('/projekt-swd'); ?>" class="dropdown-link">S(w)D</a></li>
+            <li><a href="<?php echo site_url('/projekt-bw'); ?>" class="dropdown-link">BW</a></li>
+            <li><a href="<?php echo site_url('/projekt-gps'); ?>" class="dropdown-link">GPS</a></li>
+            <li><a href="<?php echo site_url('projekt-caseclub'); ?>" class="dropdown-link">CC</a></li>
+            <li><a href="<?php echo site_url('/projekt-hs'); ?>" class="dropdown-link">HS</a></li>
             <!--<li><a href="<?php echo site_url('/od'); ?>" class="dropdown-link">OD</a></li>-->
           </ul>
         </li>
