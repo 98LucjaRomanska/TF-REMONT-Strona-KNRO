@@ -1262,7 +1262,7 @@ button {
   background-color: #2ec24f;
   padding-right: 5vw;
 } */
-@media (max-width:780px) {
+@media (max-width:605px) {
   /* 1. Nawigacja: 2 kolumny na małym ekranie, by teksty się nie ucinały */
   .navigation-values {
     grid-template-columns: 1fr 1fr;
