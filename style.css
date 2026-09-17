@@ -1263,11 +1263,67 @@ button {
   padding-right: 5vw;
 } */
 @media (max-width:780px) {
-    .item {
-      margin: 0 1rem; 
-      grid-template-columns: 1fr 4fr;
-    }
+  /* 1. Nawigacja: 2 kolumny na małym ekranie, by teksty się nie ucinały */
+  .navigation-values {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 10px;
   }
+
+  .navigation-values a {
+    margin: 4px;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+
+  /* 2. Zmniejszenie zdjęcia w kołach (oryginalnie 270px) */
+  .profile-image {
+    width: 140px;
+    height: 140px;
+
+  }
+
+  /* 3. Zwiększenie obszaru dla pola tekstowego */
+  .content-identity {
+    flex: 1; /* Tekst zajmuje całą dostępną wolną przestrzeń */
+  }
+  .tag-filar {
+    font-size: small;
+    padding: 10px 0;
+  }
+  .b-block h1 {
+    transition: letter-spacing 0.3s ease, transform 0.2s ease;
+    display:inline-block;
+  }
+  .b-block h1:hover {
+    letter-spacing: 2px;
+    transform: translateY(3px);
+  } 
+  .b-block .prop-left .content-identity .tag-filar {
+    
+    padding-left: 45px;
+  }
+  .b-block .prop-right .content-identity .tag-filar {
+    
+    padding-right: 45px;
+  }
+  /* Zmniejszenie wewnętrznych marginesów tekstu, aby sam blok tekstowy był większy i czytelniejszy */
+  .b-block .prop-right .content-identity .text-holder {
+    /* top right bottom left */
+    padding: 7px 35px 15px 10px;
+  }
+
+  .b-block .prop-left .content-identity .text-holder {
+    padding: 7px 10px 15px 40px;
+  }
+
+  .text-holder p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+
 
 
 /* ================================================================
